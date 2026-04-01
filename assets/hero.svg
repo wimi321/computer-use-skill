@@ -9,7 +9,7 @@
       <stop stop-color="#FFFFFF" stop-opacity="0.18"/>
       <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
     </linearGradient>
-    <linearGradient id="line" x1="264" y1="540" x2="1336" y2="540" gradientUnits="userSpaceOnUse">
+    <linearGradient id="line" x1="264" y1="666" x2="1336" y2="666" gradientUnits="userSpaceOnUse">
       <stop stop-color="#5EEAD4"/>
       <stop offset="0.5" stop-color="#FDE68A"/>
       <stop offset="1" stop-color="#93C5FD"/>
@@ -22,7 +22,7 @@
   <rect x="120" y="112" width="1360" height="676" rx="32" fill="#09111F" fill-opacity="0.52" stroke="#FFFFFF" stroke-opacity="0.12"/>
   <text x="176" y="240" fill="#F8FAFC" font-size="84" font-weight="800" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Computer-Use Skill</text>
   <text x="176" y="302" fill="#C6D2E1" font-size="34" font-weight="500" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">One top-level skill. Three standalone runtimes. Zero local Claude dependency.</text>
-  <line x1="264" y1="540" x2="1336" y2="540" stroke="url(#line)" stroke-width="6" stroke-linecap="round"/>
+  <line x1="264" y1="666" x2="1336" y2="666" stroke="url(#line)" stroke-width="4" stroke-linecap="round" stroke-opacity="0.55"/>
   <rect x="208" y="420" width="268" height="220" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.18"/>
   <rect x="666" y="420" width="268" height="220" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.18"/>
   <rect x="1124" y="420" width="268" height="220" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.18"/>
