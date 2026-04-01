@@ -1,0 +1,39 @@
+<svg width="1600" height="900" viewBox="0 0 1600 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="bg" x1="140" y1="80" x2="1440" y2="820" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#0B1220"/>
+      <stop offset="0.5" stop-color="#14213D"/>
+      <stop offset="1" stop-color="#1F6E8C"/>
+    </linearGradient>
+    <linearGradient id="card" x1="0" y1="0" x2="1" y2="1">
+      <stop stop-color="#FFFFFF" stop-opacity="0.18"/>
+      <stop offset="1" stop-color="#FFFFFF" stop-opacity="0.05"/>
+    </linearGradient>
+    <linearGradient id="line" x1="264" y1="540" x2="1336" y2="540" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#5EEAD4"/>
+      <stop offset="0.5" stop-color="#FDE68A"/>
+      <stop offset="1" stop-color="#93C5FD"/>
+    </linearGradient>
+  </defs>
+  <rect width="1600" height="900" rx="36" fill="url(#bg)"/>
+  <circle cx="208" cy="158" r="112" fill="#5EEAD4" fill-opacity="0.08"/>
+  <circle cx="1400" cy="172" r="152" fill="#FCA5A5" fill-opacity="0.10"/>
+  <circle cx="1328" cy="760" r="176" fill="#93C5FD" fill-opacity="0.10"/>
+  <rect x="120" y="112" width="1360" height="676" rx="32" fill="#09111F" fill-opacity="0.52" stroke="#FFFFFF" stroke-opacity="0.12"/>
+  <text x="176" y="240" fill="#F8FAFC" font-size="84" font-weight="800" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Computer-Use Skill</text>
+  <text x="176" y="302" fill="#C6D2E1" font-size="34" font-weight="500" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">One top-level skill. Three standalone runtimes. Zero local Claude dependency.</text>
+  <line x1="264" y1="540" x2="1336" y2="540" stroke="url(#line)" stroke-width="6" stroke-linecap="round"/>
+  <rect x="208" y="420" width="268" height="220" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.18"/>
+  <rect x="666" y="420" width="268" height="220" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.18"/>
+  <rect x="1124" y="420" width="268" height="220" rx="28" fill="url(#card)" stroke="#FFFFFF" stroke-opacity="0.18"/>
+  <text x="248" y="492" fill="#8CE6D8" font-size="28" font-weight="700" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">macOS</text>
+  <text x="248" y="548" fill="#FFFFFF" font-size="42" font-weight="800" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Validated</text>
+  <text x="248" y="594" fill="#D7E1EC" font-size="24" font-weight="500" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">real GUI testing</text>
+  <text x="706" y="492" fill="#FDE68A" font-size="28" font-weight="700" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Windows</text>
+  <text x="706" y="548" fill="#FFFFFF" font-size="42" font-weight="800" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Published</text>
+  <text x="706" y="594" fill="#D7E1EC" font-size="24" font-weight="500" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">runtime bundled</text>
+  <text x="1164" y="492" fill="#93C5FD" font-size="28" font-weight="700" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Linux</text>
+  <text x="1164" y="548" fill="#FFFFFF" font-size="42" font-weight="800" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Published</text>
+  <text x="1164" y="594" fill="#D7E1EC" font-size="24" font-weight="500" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">X11-first runtime</text>
+  <text x="176" y="736" fill="#D7E1EC" font-size="26" font-weight="500" font-family="SF Pro Display, Segoe UI, Helvetica, Arial, sans-serif">Install one skill. Resolve the active platform. Build only the matching standalone project.</text>
+</svg>
