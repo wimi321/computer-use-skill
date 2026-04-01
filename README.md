@@ -5,7 +5,7 @@
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
-    <a href="https://clawhub.ai/wimi321/computer-use-skill">ClawHub</a>
+    <a href="https://clawhub.ai/wimi321/cross-platform-computer-use-skill">ClawHub</a>
     ·
     <a href="./README.zh-CN.md">简体中文</a>
     ·
@@ -15,10 +15,10 @@
 
 ## Install From ClawHub
 
-Published on ClawHub as [`computer-use-skill`](https://clawhub.ai/wimi321/computer-use-skill).
+Published on ClawHub as [`cross-platform-computer-use-skill`](https://clawhub.ai/wimi321/cross-platform-computer-use-skill).
 
 ```bash
-clawhub install computer-use-skill
+clawhub install cross-platform-computer-use-skill
 ```
 
 ## Positioning
@@ -33,7 +33,7 @@ Instead of asking users to pick a platform-specific package first, this reposito
 
 ## What You Get
 
-- one top-level `computer-use-skill` skill
+- one top-level `cross-platform-computer-use-skill` skill
 - bundled standalone projects for `macOS`, `Windows`, and `Linux`
 - platform-selection scripts that resolve the active host project
 - public dependency chain only inside each runtime
@@ -66,7 +66,7 @@ The top-level skill installs all three runtime payloads once, then resolves the 
 After installation:
 
 ```text
-~/.codex/skills/computer-use-skill/
+~/.codex/skills/cross-platform-computer-use-skill/
   SKILL.md
   scripts/
   project/
@@ -82,25 +82,25 @@ After installation:
 ### Shell
 
 ```bash
-bash ~/.codex/skills/computer-use-skill/scripts/current-project.sh
+bash ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.sh
 ```
 
 ### PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/computer-use-skill/scripts/current-project.ps1
+powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.ps1
 ```
 
 ### Node.js
 
 ```bash
-node ~/.codex/skills/computer-use-skill/scripts/current-project.mjs
+node ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.mjs
 ```
 
 ## Build And Run
 
 ```bash
-cd "$(node ~/.codex/skills/computer-use-skill/scripts/current-project.mjs)"
+cd "$(node ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.mjs)"
 npm install
 npm run build
 node dist/cli.js
