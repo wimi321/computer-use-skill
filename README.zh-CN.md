@@ -5,7 +5,7 @@
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
-    <a href="https://clawhub.ai/wimi321/cross-platform-computer-use-skill">ClawHub</a>
+    <a href="https://clawhub.ai/wimi321/deskuse">ClawHub</a>
     ·
     <a href="./README.md">English</a>
     ·
@@ -15,10 +15,10 @@
 
 ## ClawHub 安装
 
-这个顶级 skill 已发布到 ClawHub，slug 是 [`cross-platform-computer-use-skill`](https://clawhub.ai/wimi321/cross-platform-computer-use-skill)。
+这个顶级 skill 已发布到 ClawHub，slug 是 [`deskuse`](https://clawhub.ai/wimi321/deskuse)。
 
 ```bash
-clawhub install cross-platform-computer-use-skill
+clawhub install deskuse
 ```
 
 ## 项目定位
@@ -33,7 +33,7 @@ clawhub install cross-platform-computer-use-skill
 
 ## 你会得到什么
 
-- 一个顶级 `cross-platform-computer-use-skill` skill
+- 一个顶级 `deskuse` skill
 - 内置 `macOS`、`Windows`、`Linux` 三个平台的独立项目
 - 平台选择脚本，自动定位当前主机该使用哪个项目
 - 各平台仍然只依赖公开依赖链
@@ -64,7 +64,7 @@ flowchart LR
 ## 安装后的结构
 
 ```text
-~/.codex/skills/cross-platform-computer-use-skill/
+~/.codex/skills/deskuse/
   SKILL.md
   scripts/
   project/
@@ -80,25 +80,25 @@ flowchart LR
 ### Shell
 
 ```bash
-bash ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.sh
+bash ~/.codex/skills/deskuse/scripts/current-project.sh
 ```
 
 ### PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.ps1
+powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/deskuse/scripts/current-project.ps1
 ```
 
 ### Node.js
 
 ```bash
-node ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.mjs
+node ~/.codex/skills/deskuse/scripts/current-project.mjs
 ```
 
 ## 构建与运行
 
 ```bash
-cd "$(node ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.mjs)"
+cd "$(node ~/.codex/skills/deskuse/scripts/current-project.mjs)"
 npm install
 npm run build
 node dist/cli.js

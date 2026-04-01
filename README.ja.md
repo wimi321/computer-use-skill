@@ -5,7 +5,7 @@
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
-    <a href="https://clawhub.ai/wimi321/cross-platform-computer-use-skill">ClawHub</a>
+    <a href="https://clawhub.ai/wimi321/deskuse">ClawHub</a>
     ·
     <a href="./README.md">English</a>
     ·
@@ -15,10 +15,10 @@
 
 ## ClawHub からインストール
 
-このトップレベル skill は ClawHub に [`cross-platform-computer-use-skill`](https://clawhub.ai/wimi321/cross-platform-computer-use-skill) として公開されています。
+このトップレベル skill は ClawHub に [`deskuse`](https://clawhub.ai/wimi321/deskuse) として公開されています。
 
 ```bash
-clawhub install cross-platform-computer-use-skill
+clawhub install deskuse
 ```
 
 ## このプロジェクトの位置づけ
@@ -33,7 +33,7 @@ clawhub install cross-platform-computer-use-skill
 
 ## できること
 
-- 1 つのトップレベル `cross-platform-computer-use-skill` skill
+- 1 つのトップレベル `deskuse` skill
 - `macOS`、`Windows`、`Linux` の standalone project を同梱
 - 現在のホストに対応する project を返す platform resolver
 - 各プラットフォームは引き続き public dependency のみ
@@ -64,7 +64,7 @@ flowchart LR
 ## インストール後の構成
 
 ```text
-~/.codex/skills/cross-platform-computer-use-skill/
+~/.codex/skills/deskuse/
   SKILL.md
   scripts/
   project/
@@ -80,25 +80,25 @@ flowchart LR
 ### Shell
 
 ```bash
-bash ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.sh
+bash ~/.codex/skills/deskuse/scripts/current-project.sh
 ```
 
 ### PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.ps1
+powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/deskuse/scripts/current-project.ps1
 ```
 
 ### Node.js
 
 ```bash
-node ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.mjs
+node ~/.codex/skills/deskuse/scripts/current-project.mjs
 ```
 
 ## Build と Run
 
 ```bash
-cd "$(node ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.mjs)"
+cd "$(node ~/.codex/skills/deskuse/scripts/current-project.mjs)"
 npm install
 npm run build
 node dist/cli.js

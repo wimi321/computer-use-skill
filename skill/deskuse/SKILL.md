@@ -1,5 +1,5 @@
 ---
-name: cross-platform-computer-use-skill
+name: deskuse
 version: 0.1.0
 description: Top-level cross-platform computer-use skill that bundles standalone macOS, Windows, and Linux runtimes with zero local Claude dependency and selects the correct platform payload at install/use time.
 tags:
@@ -29,15 +29,15 @@ Use this skill when the task needs a top-level portable computer-use skill that 
 After installation, assume the top-level skill lives at:
 
 ```bash
-~/.codex/skills/cross-platform-computer-use-skill
+~/.codex/skills/deskuse
 ```
 
 The bundled projects are stored under:
 
 ```bash
-~/.codex/skills/cross-platform-computer-use-skill/project/platforms/macos
-~/.codex/skills/cross-platform-computer-use-skill/project/platforms/windows
-~/.codex/skills/cross-platform-computer-use-skill/project/platforms/linux
+~/.codex/skills/deskuse/project/platforms/macos
+~/.codex/skills/deskuse/project/platforms/windows
+~/.codex/skills/deskuse/project/platforms/linux
 ```
 
 ## Platform selection
@@ -45,13 +45,13 @@ The bundled projects are stored under:
 Use the helper script from the installed skill root to resolve the active platform project:
 
 ```bash
-bash ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.sh
+bash ~/.codex/skills/deskuse/scripts/current-project.sh
 ```
 
 On PowerShell:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.ps1
+powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/deskuse/scripts/current-project.ps1
 ```
 
 ## Build
@@ -59,7 +59,7 @@ powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/cross-platform-comp
 Always build the selected platform project, not all three at once:
 
 ```bash
-cd "$(bash ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.sh)"
+cd "$(bash ~/.codex/skills/deskuse/scripts/current-project.sh)"
 npm install
 npm run build
 ```
@@ -67,7 +67,7 @@ npm run build
 ## Run
 
 ```bash
-cd "$(bash ~/.codex/skills/cross-platform-computer-use-skill/scripts/current-project.sh)"
+cd "$(bash ~/.codex/skills/deskuse/scripts/current-project.sh)"
 node dist/cli.js
 ```
 
