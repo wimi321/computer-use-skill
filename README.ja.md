@@ -1,7 +1,12 @@
 <div align="center">
-  <img src="./assets/hero.svg" alt="computer-use skill hero" width="100%" />
+  <img src="./assets/hero.svg" alt="computer-use skill hero" width="920" />
   <h1>Computer-Use Skill</h1>
   <p><strong>macOS・Windows・Linux の standalone computer-use runtime をひとつに束ねたトップレベル skill。</strong></p>
+  <p>
+    <img alt="Platform" src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-0f172a?style=for-the-badge" />
+    <img alt="ClawHub" src="https://img.shields.io/badge/ClawHub-compuse-0ea5e9?style=for-the-badge" />
+    <img alt="Validation" src="https://img.shields.io/badge/macOS-real--device%20validated-16a34a?style=for-the-badge" />
+  </p>
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
@@ -12,6 +17,19 @@
     <a href="./README.zh-CN.md">简体中文</a>
   </p>
 </div>
+
+## ひと目で分かること
+
+| Install | Package | Positioning |
+| --- | --- | --- |
+| `clawhub install compuse` | 1 つのトップレベル skill | cross-platform の統一入口 |
+
+## なぜトップレベル project として強いか
+
+- インストール先が 1 つで覚えやすい
+- リポジトリのブランドと多言語 README がまとまっている
+- bunded distribution でありつつ platform 差分は隠さない
+- Codex、OpenClaw、OpenCode、TRAE などに載せやすい skill-first 入口
 
 ## ClawHub からインストール
 
@@ -30,6 +48,14 @@ clawhub install compuse
 - agent エコシステム向けの cross-platform portable computer-use パッケージ
 
 として設計されています。まず 1 つの skill を入れ、その後でホスト環境に合う runtime を選ぶ形です。
+
+## Quick Start
+
+```bash
+clawhub install compuse
+cd ~/.codex/skills/compuse
+bash scripts/current-project.sh
+```
 
 ## できること
 

@@ -1,7 +1,12 @@
 <div align="center">
-  <img src="./assets/hero.svg" alt="computer-use skill hero" width="100%" />
+  <img src="./assets/hero.svg" alt="computer-use skill hero" width="920" />
   <h1>Computer-Use Skill</h1>
   <p><strong>One top-level skill that bundles standalone macOS, Windows, and Linux computer-use runtimes.</strong></p>
+  <p>
+    <img alt="Platform" src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-0f172a?style=for-the-badge" />
+    <img alt="ClawHub" src="https://img.shields.io/badge/ClawHub-compuse-0ea5e9?style=for-the-badge" />
+    <img alt="Validation" src="https://img.shields.io/badge/macOS-real--device%20validated-16a34a?style=for-the-badge" />
+  </p>
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
@@ -12,6 +17,19 @@
     <a href="./README.ja.md">日本語</a>
   </p>
 </div>
+
+## At A Glance
+
+| Install | Package | Positioning |
+| --- | --- | --- |
+| `clawhub install compuse` | one top-level skill | one cross-platform entry point |
+
+## Why It Feels Premium
+
+- one memorable install target instead of three disconnected packages
+- one repository identity with multi-language documentation
+- one bundled distribution that stays explicit about real platform differences
+- one skill-first story for Codex, OpenClaw, OpenCode, TRAE, and similar ecosystems
 
 ## Install From ClawHub
 
@@ -30,6 +48,14 @@ This repository is:
 - one portable skill-first entry point for agent ecosystems
 
 Instead of asking users to pick a platform-specific package first, this repository ships one premium entry point and bundles the platform runtimes behind it.
+
+## Quick Start
+
+```bash
+clawhub install compuse
+cd ~/.codex/skills/compuse
+bash scripts/current-project.sh
+```
 
 ## What You Get
 

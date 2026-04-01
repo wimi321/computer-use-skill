@@ -1,7 +1,12 @@
 <div align="center">
-  <img src="./assets/hero.svg" alt="computer-use skill hero" width="100%" />
+  <img src="./assets/hero.svg" alt="computer-use skill hero" width="920" />
   <h1>Computer-Use Skill</h1>
   <p><strong>一个顶级跨平台 skill，把独立的 macOS、Windows、Linux computer-use runtime 一次性打包好。</strong></p>
+  <p>
+    <img alt="Platform" src="https://img.shields.io/badge/platform-macOS%20%7C%20Windows%20%7C%20Linux-0f172a?style=for-the-badge" />
+    <img alt="ClawHub" src="https://img.shields.io/badge/ClawHub-compuse-0ea5e9?style=for-the-badge" />
+    <img alt="Validation" src="https://img.shields.io/badge/macOS-真实设备已验证-16a34a?style=for-the-badge" />
+  </p>
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
@@ -12,6 +17,19 @@
     <a href="./README.ja.md">日本語</a>
   </p>
 </div>
+
+## 一眼看懂
+
+| 安装命令 | 包名 | 项目定位 |
+| --- | --- | --- |
+| `clawhub install compuse` | 一个顶级 skill | 一个跨平台统一入口 |
+
+## 为什么它像顶级项目
+
+- 一个安装目标，而不是三个割裂的平台包
+- 一个仓库品牌，配齐多语言文档
+- 一个 bunded distribution，同时仍然明确呈现平台差异
+- 一套 skill-first 入口，适合 Codex、OpenClaw、OpenCode、TRAE 等生态
 
 ## ClawHub 安装
 
@@ -30,6 +48,14 @@ clawhub install compuse
 - 一个面向 agent 生态的跨平台 portable computer-use 技能包
 
 它不要求用户先理解平台差异再挑包，而是先安装一个顶级 skill，再由它选择正确的平台运行时。
+
+## 快速开始
+
+```bash
+clawhub install compuse
+cd ~/.codex/skills/compuse
+bash scripts/current-project.sh
+```
 
 ## 你会得到什么
 
