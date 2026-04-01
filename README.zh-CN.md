@@ -18,18 +18,39 @@
   </p>
 </div>
 
+<p align="center">
+  <strong>一次安装。</strong>
+  自动解析当前主机平台。
+  同时保留每个平台 runtime 的独立性、可移植性和可测试性。
+</p>
+
 ## 一眼看懂
 
 | 安装命令 | 包名 | 项目定位 |
 | --- | --- | --- |
 | `clawhub install compuse` | 一个顶级 skill | 一个跨平台统一入口 |
 
+## 项目快照
+
+| 维度 | 当前状态 |
+| --- | --- |
+| 打包方式 | 一个覆盖 `macOS`、`Windows`、`Linux` 的顶级 skill |
+| 运行模型 | 内置独立 payload，不依赖本机 Claude 安装 |
+| 公开安装名 | [`compuse`](https://clawhub.ai/wimi321/compuse) |
+| 当前最强验证 | 本仓库所在机器上的 macOS 真机验证 |
+
 ## 为什么它像顶级项目
 
 - 一个安装目标，而不是三个割裂的平台包
 - 一个仓库品牌，配齐多语言文档
-- 一个 bunded distribution，同时仍然明确呈现平台差异
+- 一个 bundled distribution，同时仍然明确呈现平台差异
 - 一套 skill-first 入口，适合 Codex、OpenClaw、OpenCode、TRAE 等生态
+
+## 这个项目真正不一样的地方
+
+- 不要求本机先装 Claude desktop，也不依赖提取私有资源或隐藏 native 模块
+- 不假装三平台完全一致，而是把平台差异保留在清晰可见的 runtime 里
+- 先把安装入口做成一个顶级 skill，再把实现细节诚实地放在后面
 
 ## ClawHub 安装
 
@@ -56,6 +77,15 @@ clawhub install compuse
 cd ~/.codex/skills/compuse
 bash scripts/current-project.sh
 ```
+
+## 快速信息
+
+| 你想要的 | 这里提供的 |
+| --- | --- |
+| 一个安装目标 | `compuse` |
+| 一个统一品牌入口 | 一个 GitHub 项目 + 一个 ClawHub 页面 |
+| 跨平台分发 | 内置 `macOS`、`Windows`、`Linux` payload |
+| 诚实的状态说明 | 每个平台独立验证说明 |
 
 ## 你会得到什么
 
@@ -134,7 +164,7 @@ node dist/cli.js
 
 已经真实完成的：
 
-- `macOS`：真实设备权限、截图、剪贴板、前台应用、MCP `type` 回读、安装态 skill 验证
+- `macOS`：真实设备权限、截图、剪贴板、前台应用、MCP `type` 回读、安装态 skill 验证、raw typing 稳定性修复、bootstrap 并发修复
 - `Windows`：TypeScript 构建、Python helper 编译、bundled payload 完整性、共享快捷键保护修复、已发布 skill
 - `Linux`：TypeScript 构建、Python helper 编译、bundled payload 完整性、Linux 平台保护修复、已发布 skill
 
@@ -142,6 +172,13 @@ node dist/cli.js
 
 - `Windows`：真实应用 GUI 控制、UAC/管理员窗口、焦点边界
 - `Linux`：真实 X11 GUI 控制、Wayland 行为、桌面环境差异
+
+## 信任边界
+
+- 这个项目面向可信本机环境下的桌面自动化
+- 当前 runtime 报告的 `screenshotFiltering` 是 `none`
+- 安全控制依赖 MCP 层、授权模型和平台 gate，而不是假装宿主本身被沙箱隔离
+- 仓库只写真实验证过的能力，不伪造三平台完全同级的成熟度
 
 ## 为什么要做成顶级 Skill
 
@@ -157,6 +194,12 @@ node dist/cli.js
 - [macOS Computer-Use Skill](https://github.com/wimi321/macos-computer-use-skill)
 - [Windows Computer-Use Skill](https://github.com/wimi321/windows-computer-use-skill)
 - [Linux Computer-Use Skill](https://github.com/wimi321/linux-computer-use-skill)
+
+## 多语言阅读
+
+- [English](https://github.com/wimi321/computer-use-skill/blob/main/README.md)
+- [简体中文](https://github.com/wimi321/computer-use-skill/blob/main/README.zh-CN.md)
+- [日本語](https://github.com/wimi321/computer-use-skill/blob/main/README.ja.md)
 
 ## License
 

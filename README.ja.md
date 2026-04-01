@@ -18,18 +18,39 @@
   </p>
 </div>
 
+<p align="center">
+  <strong>一度インストール。</strong>
+  実行時に現在のホストを自動判定。
+  そのうえで各 platform runtime の独立性と可搬性は維持します。
+</p>
+
 ## ひと目で分かること
 
 | Install | Package | Positioning |
 | --- | --- | --- |
 | `clawhub install compuse` | 1 つのトップレベル skill | cross-platform の統一入口 |
 
+## プロジェクト概要
+
+| 項目 | 内容 |
+| --- | --- |
+| Packaging | `macOS`・`Windows`・`Linux` を束ねる 1 つのトップレベル skill |
+| Runtime model | ローカル Claude install 不要の standalone payload 同梱型 |
+| Public install name | [`compuse`](https://clawhub.ai/wimi321/compuse) |
+| 現在の最強検証 | この workspace 上での macOS 実機検証 |
+
 ## なぜトップレベル project として強いか
 
 - インストール先が 1 つで覚えやすい
 - リポジトリのブランドと多言語 README がまとまっている
-- bunded distribution でありつつ platform 差分は隠さない
+- bundled distribution でありつつ platform 差分は隠さない
 - Codex、OpenClaw、OpenCode、TRAE などに載せやすい skill-first 入口
+
+## この project の違い
+
+- Claude desktop のローカル install や private asset 抽出を前提にしない
+- macOS・Windows・Linux を無理に同一視せず、runtime 差分を明示したまま配布する
+- install story は 1 つにまとめつつ、実装面は正直な構造を保っている
 
 ## ClawHub からインストール
 
@@ -49,13 +70,22 @@ clawhub install compuse
 
 として設計されています。まず 1 つの skill を入れ、その後でホスト環境に合う runtime を選ぶ形です。
 
-## Quick Start
+## クイックスタート
 
 ```bash
 clawhub install compuse
 cd ~/.codex/skills/compuse
 bash scripts/current-project.sh
 ```
+
+## 早見表
+
+| 欲しいもの | この repo が提供するもの |
+| --- | --- |
+| 1 つの install target | `compuse` |
+| 1 つの project identity | GitHub と ClawHub の統一入口 |
+| cross-platform packaging | `macOS`・`Windows`・`Linux` payload 同梱 |
+| 正直な status 表現 | platform ごとの検証範囲を明示 |
 
 ## できること
 
@@ -134,7 +164,7 @@ node dist/cli.js
 
 実際に確認済みのもの:
 
-- `macOS`: 実機での権限、スクリーンショット、clipboard、frontmost app、MCP `type` ラウンドトリップ、install 後の skill 動作
+- `macOS`: 実機での権限、スクリーンショット、clipboard、frontmost app、MCP `type` ラウンドトリップ、install 後の skill 動作、raw typing 安定化修正、bootstrap 並行起動修正
 - `Windows`: TypeScript build、Python helper compile check、bundled payload 整合性、共有 shortcut guard 修正、skill publish
 - `Linux`: TypeScript build、Python helper compile check、bundled payload 整合性、Linux platform guard 修正、skill publish
 
@@ -142,6 +172,13 @@ node dist/cli.js
 
 - `Windows`: 実アプリに対する GUI 操作、UAC / 管理者ウィンドウ、focus edge case
 - `Linux`: 実機 X11 GUI、Wayland の挙動、desktop environment 差異
+
+## 信頼境界
+
+- この project は trusted local desktop automation 向け
+- 現在の runtime は `screenshotFiltering: none` を返す
+- 安全性は MCP layer、grant model、platform gating で担保しており、host の完全 sandbox を装わない
+- README では実際に検証した内容だけを書き、未検証部分を誇張しない
 
 ## なぜトップレベル Skill なのか
 
@@ -157,6 +194,12 @@ node dist/cli.js
 - [macOS Computer-Use Skill](https://github.com/wimi321/macos-computer-use-skill)
 - [Windows Computer-Use Skill](https://github.com/wimi321/windows-computer-use-skill)
 - [Linux Computer-Use Skill](https://github.com/wimi321/linux-computer-use-skill)
+
+## 言語リンク
+
+- [English](https://github.com/wimi321/computer-use-skill/blob/main/README.md)
+- [简体中文](https://github.com/wimi321/computer-use-skill/blob/main/README.zh-CN.md)
+- [日本語](https://github.com/wimi321/computer-use-skill/blob/main/README.ja.md)
 
 ## License
 

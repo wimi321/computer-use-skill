@@ -18,11 +18,26 @@
   </p>
 </div>
 
+<p align="center">
+  <strong>Install once.</strong>
+  Resolve the active host automatically.
+  Keep each platform runtime explicit, portable, and independently testable.
+</p>
+
 ## At A Glance
 
 | Install | Package | Positioning |
 | --- | --- | --- |
 | `clawhub install compuse` | one top-level skill | one cross-platform entry point |
+
+## Project Snapshot
+
+| Track | What it means |
+| --- | --- |
+| Packaging | one top-level skill for `macOS`, `Windows`, and `Linux` |
+| Runtime model | bundled standalone payloads, no local Claude install required |
+| Public install target | [`compuse`](https://clawhub.ai/wimi321/compuse) |
+| Current strongest validation | real-device macOS validation in this workspace |
 
 ## Why It Feels Premium
 
@@ -30,6 +45,12 @@
 - one repository identity with multi-language documentation
 - one bundled distribution that stays explicit about real platform differences
 - one skill-first story for Codex, OpenClaw, OpenCode, TRAE, and similar ecosystems
+
+## What Makes This Different
+
+- it does not assume a local Claude desktop install, extracted private assets, or hidden native modules
+- it keeps platform runtimes visible instead of pretending macOS, Windows, and Linux behave the same
+- it ships as a top-level skill first, so the install story stays simple while the implementation stays honest
 
 ## Install From ClawHub
 
@@ -56,6 +77,15 @@ clawhub install compuse
 cd ~/.codex/skills/compuse
 bash scripts/current-project.sh
 ```
+
+## Fast Facts
+
+| You want | This repo gives you |
+| --- | --- |
+| one install target | `compuse` |
+| one repo identity | one GitHub project plus one ClawHub listing |
+| cross-platform packaging | bundled payloads for `macOS`, `Windows`, `Linux` |
+| a truthful status model | explicit validation notes per platform |
 
 ## What You Get
 
@@ -136,7 +166,7 @@ node dist/cli.js
 
 What has actually been verified so far:
 
-- `macOS`: real-device validation, permissions, screenshots, clipboard, frontmost-app checks, MCP typing round-trip, and installed-skill smoke tests
+- `macOS`: real-device validation, permissions, screenshots, clipboard, frontmost-app checks, MCP typing round-trip, installed-skill smoke tests, raw typing stability fix, and bootstrap concurrency fix
 - `Windows`: TypeScript build, Python helper compile check, bundled payload integrity, shared blocklist fix, published skill
 - `Linux`: TypeScript build, Python helper compile check, bundled payload integrity, explicit Linux platform-guard fix, published skill
 
@@ -144,6 +174,13 @@ What still needs real-host validation:
 
 - `Windows`: GUI automation against real apps, UAC/admin windows, focus edge cases
 - `Linux`: real X11 GUI automation, Wayland behavior, desktop-environment variance
+
+## Trust Boundary
+
+- this project is for trusted local desktop automation
+- screenshots on current runtimes are reported as `screenshotFiltering: none`
+- action safety is enforced by the MCP layer, grants, and platform gating, not by pretending the host is sandboxed
+- the repository documents what was truly tested instead of claiming full parity where it does not exist
 
 ## Why A Top-Level Skill
 
@@ -159,6 +196,12 @@ This setup gives the project a stronger shape than three unrelated platform pack
 - [macOS Computer-Use Skill](https://github.com/wimi321/macos-computer-use-skill)
 - [Windows Computer-Use Skill](https://github.com/wimi321/windows-computer-use-skill)
 - [Linux Computer-Use Skill](https://github.com/wimi321/linux-computer-use-skill)
+
+## Read In Your Language
+
+- [English](https://github.com/wimi321/computer-use-skill/blob/main/README.md)
+- [简体中文](https://github.com/wimi321/computer-use-skill/blob/main/README.zh-CN.md)
+- [日本語](https://github.com/wimi321/computer-use-skill/blob/main/README.ja.md)
 
 ## License
 
