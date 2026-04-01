@@ -1,5 +1,5 @@
 ---
-name: computer-use
+name: computer-use-skill
 version: 0.1.0
 description: Top-level cross-platform computer-use skill that bundles standalone macOS, Windows, and Linux runtimes with zero local Claude dependency and selects the correct platform payload at install/use time.
 tags:
@@ -29,15 +29,15 @@ Use this skill when the task needs a top-level portable computer-use skill that 
 After installation, assume the top-level skill lives at:
 
 ```bash
-~/.codex/skills/computer-use
+~/.codex/skills/computer-use-skill
 ```
 
 The bundled projects are stored under:
 
 ```bash
-~/.codex/skills/computer-use/project/platforms/macos
-~/.codex/skills/computer-use/project/platforms/windows
-~/.codex/skills/computer-use/project/platforms/linux
+~/.codex/skills/computer-use-skill/project/platforms/macos
+~/.codex/skills/computer-use-skill/project/platforms/windows
+~/.codex/skills/computer-use-skill/project/platforms/linux
 ```
 
 ## Platform selection
@@ -45,13 +45,13 @@ The bundled projects are stored under:
 Use the helper script from the installed skill root to resolve the active platform project:
 
 ```bash
-bash ~/.codex/skills/computer-use/scripts/current-project.sh
+bash ~/.codex/skills/computer-use-skill/scripts/current-project.sh
 ```
 
 On PowerShell:
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/computer-use/scripts/current-project.ps1
+powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/computer-use-skill/scripts/current-project.ps1
 ```
 
 ## Build
@@ -59,7 +59,7 @@ powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/computer-use/script
 Always build the selected platform project, not all three at once:
 
 ```bash
-cd "$(bash ~/.codex/skills/computer-use/scripts/current-project.sh)"
+cd "$(bash ~/.codex/skills/computer-use-skill/scripts/current-project.sh)"
 npm install
 npm run build
 ```
@@ -67,7 +67,7 @@ npm run build
 ## Run
 
 ```bash
-cd "$(bash ~/.codex/skills/computer-use/scripts/current-project.sh)"
+cd "$(bash ~/.codex/skills/computer-use-skill/scripts/current-project.sh)"
 node dist/cli.js
 ```
 

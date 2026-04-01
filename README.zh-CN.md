@@ -5,7 +5,7 @@
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
-    <a href="https://clawhub.ai/wimi321/computer-use">ClawHub</a>
+    <a href="https://clawhub.ai/wimi321/computer-use-skill">ClawHub</a>
     ·
     <a href="./README.md">English</a>
     ·
@@ -15,10 +15,10 @@
 
 ## ClawHub 安装
 
-这个顶级 skill 已发布到 ClawHub，slug 是 [`computer-use`](https://clawhub.ai/wimi321/computer-use)。
+这个顶级 skill 已发布到 ClawHub，slug 是 [`computer-use-skill`](https://clawhub.ai/wimi321/computer-use-skill)。
 
 ```bash
-clawhub install computer-use
+clawhub install computer-use-skill
 ```
 
 ## 项目定位
@@ -33,7 +33,7 @@ clawhub install computer-use
 
 ## 你会得到什么
 
-- 一个顶级 `computer-use` skill
+- 一个顶级 `computer-use-skill` skill
 - 内置 `macOS`、`Windows`、`Linux` 三个平台的独立项目
 - 平台选择脚本，自动定位当前主机该使用哪个项目
 - 各平台仍然只依赖公开依赖链
@@ -64,7 +64,7 @@ flowchart LR
 ## 安装后的结构
 
 ```text
-~/.codex/skills/computer-use/
+~/.codex/skills/computer-use-skill/
   SKILL.md
   scripts/
   project/
@@ -80,25 +80,25 @@ flowchart LR
 ### Shell
 
 ```bash
-bash ~/.codex/skills/computer-use/scripts/current-project.sh
+bash ~/.codex/skills/computer-use-skill/scripts/current-project.sh
 ```
 
 ### PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/computer-use/scripts/current-project.ps1
+powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/computer-use-skill/scripts/current-project.ps1
 ```
 
 ### Node.js
 
 ```bash
-node ~/.codex/skills/computer-use/scripts/current-project.mjs
+node ~/.codex/skills/computer-use-skill/scripts/current-project.mjs
 ```
 
 ## 构建与运行
 
 ```bash
-cd "$(node ~/.codex/skills/computer-use/scripts/current-project.mjs)"
+cd "$(node ~/.codex/skills/computer-use-skill/scripts/current-project.mjs)"
 npm install
 npm run build
 node dist/cli.js
