@@ -523,7 +523,11 @@ def hold_keys(keys: list[str], duration_ms: int) -> None:
 
 
 def type_text(text: str) -> None:
-    pyautogui.write(text, interval=0.008)
+    # On real macOS hosts, the raw per-key path can occasionally scramble
+    # characters when we type too aggressively without the clipboard fast path.
+    # Keep this conservative because this path is the fallback when clipboard
+    # write is unavailable or the caller intentionally avoids it.
+    pyautogui.write(text, interval=0.03)
 
 
 def main() -> int:

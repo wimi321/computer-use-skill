@@ -1,6 +1,6 @@
 ---
 name: compuse
-version: 0.1.0
+version: 0.1.1
 description: Top-level cross-platform computer-use skill that bundles standalone macOS, Windows, and Linux runtimes with zero local Claude dependency and selects the correct platform payload at install/use time.
 tags:
   - skill

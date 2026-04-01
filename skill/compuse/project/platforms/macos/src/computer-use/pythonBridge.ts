@@ -1,5 +1,5 @@
 import { createHash } from 'node:crypto'
-import { readFile, mkdir, access, writeFile } from 'node:fs/promises'
+import { readFile, mkdir, access, writeFile, rm } from 'node:fs/promises'
 import path from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { execFileNoThrow } from '../lib/execFileNoThrow.js'
@@ -13,6 +13,7 @@ const venvRoot = path.join(runtimeStateRoot, 'venv')
 const requirementsPath = path.join(runtimeRoot, 'requirements.txt')
 const helperPath = path.join(runtimeRoot, 'mac_helper.py')
 const installStampPath = path.join(runtimeStateRoot, 'requirements.sha256')
+const bootstrapLockDir = path.join(runtimeStateRoot, 'bootstrap.lock')
 
 let bootstrapPromise: Promise<void> | undefined
 
@@ -37,37 +38,68 @@ async function runOrThrow(file: string, args: string[], label: string): Promise<
   return stdout
 }
 
+async function sleep(ms: number): Promise<void> {
+  await new Promise(resolve => setTimeout(resolve, ms))
+}
+
+async function acquireBootstrapLock(): Promise<() => Promise<void>> {
+  while (true) {
+    try {
+      await mkdir(bootstrapLockDir)
+      await writeFile(
+        path.join(bootstrapLockDir, 'owner.json'),
+        JSON.stringify({ pid: process.pid, createdAt: Date.now() }),
+        'utf8',
+      )
+      return async () => {
+        await rm(bootstrapLockDir, { recursive: true, force: true })
+      }
+    } catch (error) {
+      const code =
+        typeof error === 'object' && error !== null && 'code' in error
+          ? String((error as { code?: unknown }).code)
+          : undefined
+      if (code !== 'EEXIST') throw error
+      await sleep(250)
+    }
+  }
+}
+
 async function ensureBootstrapped(): Promise<void> {
   if (bootstrapPromise) return bootstrapPromise
   bootstrapPromise = (async () => {
     await mkdir(runtimeStateRoot, { recursive: true })
-
-    if (!(await pathExists(pythonBinPath()))) {
-      logDebug('creating runtime venv at %s', venvRoot)
-      await runOrThrow('python3', ['-m', 'venv', venvRoot], 'python venv creation')
-    }
-
-    if (!(await pathExists(path.join(venvRoot, 'bin', 'pip')))) {
-      logDebug('bootstrapping pip with ensurepip')
-      await runOrThrow(pythonBinPath(), ['-m', 'ensurepip', '--upgrade'], 'ensurepip')
-    }
-
-    const requirements = await readFile(requirementsPath, 'utf8')
-    const digest = createHash('sha256').update(requirements).digest('hex')
-    let installedDigest = ''
+    const releaseLock = await acquireBootstrapLock()
     try {
-      installedDigest = (await readFile(installStampPath, 'utf8')).trim()
-    } catch {}
+      if (!(await pathExists(pythonBinPath()))) {
+        logDebug('creating runtime venv at %s', venvRoot)
+        await runOrThrow('python3', ['-m', 'venv', venvRoot], 'python venv creation')
+      }
 
-    if (installedDigest !== digest) {
-      logDebug('installing python runtime dependencies')
-      await runOrThrow(pythonBinPath(), ['-m', 'pip', 'install', '--upgrade', 'pip'], 'pip upgrade')
-      await runOrThrow(
-        pythonBinPath(),
-        ['-m', 'pip', 'install', '-r', requirementsPath],
-        'python dependency install',
-      )
-      await writeFile(installStampPath, `${digest}\n`, 'utf8')
+      if (!(await pathExists(path.join(venvRoot, 'bin', 'pip')))) {
+        logDebug('bootstrapping pip with ensurepip')
+        await runOrThrow(pythonBinPath(), ['-m', 'ensurepip', '--upgrade'], 'ensurepip')
+      }
+
+      const requirements = await readFile(requirementsPath, 'utf8')
+      const digest = createHash('sha256').update(requirements).digest('hex')
+      let installedDigest = ''
+      try {
+        installedDigest = (await readFile(installStampPath, 'utf8')).trim()
+      } catch {}
+
+      if (installedDigest !== digest) {
+        logDebug('installing python runtime dependencies')
+        await runOrThrow(pythonBinPath(), ['-m', 'pip', 'install', '--upgrade', 'pip'], 'pip upgrade')
+        await runOrThrow(
+          pythonBinPath(),
+          ['-m', 'pip', 'install', '-r', requirementsPath],
+          'python dependency install',
+        )
+        await writeFile(installStampPath, `${digest}\n`, 'utf8')
+      }
+    } finally {
+      await releaseLock()
     }
   })()
 
