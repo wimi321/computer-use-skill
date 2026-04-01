@@ -5,7 +5,7 @@
   <p>
     <a href="https://github.com/wimi321/computer-use-skill">GitHub</a>
     ·
-    <a href="https://clawhub.ai/wimi321/deskuse">ClawHub</a>
+    <a href="https://clawhub.ai/wimi321/compuse">ClawHub</a>
     ·
     <a href="./README.md">English</a>
     ·
@@ -15,10 +15,10 @@
 
 ## ClawHub からインストール
 
-このトップレベル skill は ClawHub に [`deskuse`](https://clawhub.ai/wimi321/deskuse) として公開されています。
+このトップレベル skill は ClawHub に [`compuse`](https://clawhub.ai/wimi321/compuse) として公開されています。
 
 ```bash
-clawhub install deskuse
+clawhub install compuse
 ```
 
 ## このプロジェクトの位置づけ
@@ -33,7 +33,7 @@ clawhub install deskuse
 
 ## できること
 
-- 1 つのトップレベル `deskuse` skill
+- 1 つのトップレベル `compuse` skill
 - `macOS`、`Windows`、`Linux` の standalone project を同梱
 - 現在のホストに対応する project を返す platform resolver
 - 各プラットフォームは引き続き public dependency のみ
@@ -64,7 +64,7 @@ flowchart LR
 ## インストール後の構成
 
 ```text
-~/.codex/skills/deskuse/
+~/.codex/skills/compuse/
   SKILL.md
   scripts/
   project/
@@ -80,25 +80,25 @@ flowchart LR
 ### Shell
 
 ```bash
-bash ~/.codex/skills/deskuse/scripts/current-project.sh
+bash ~/.codex/skills/compuse/scripts/current-project.sh
 ```
 
 ### PowerShell
 
 ```powershell
-powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/deskuse/scripts/current-project.ps1
+powershell -ExecutionPolicy Bypass -File $HOME/.codex/skills/compuse/scripts/current-project.ps1
 ```
 
 ### Node.js
 
 ```bash
-node ~/.codex/skills/deskuse/scripts/current-project.mjs
+node ~/.codex/skills/compuse/scripts/current-project.mjs
 ```
 
 ## Build と Run
 
 ```bash
-cd "$(node ~/.codex/skills/deskuse/scripts/current-project.mjs)"
+cd "$(node ~/.codex/skills/compuse/scripts/current-project.mjs)"
 npm install
 npm run build
 node dist/cli.js

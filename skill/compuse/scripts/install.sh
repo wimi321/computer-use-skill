@@ -2,7 +2,7 @@
 set -euo pipefail
 
 SRC_DIR="$(cd "$(dirname "$0")/.." && pwd)"
-DEST_DIR="${CODEX_HOME:-$HOME/.codex}/skills/deskuse"
+DEST_DIR="${CODEX_HOME:-$HOME/.codex}/skills/compuse"
 
 mkdir -p "$DEST_DIR"
 rsync -a --delete "$SRC_DIR/" "$DEST_DIR/"
